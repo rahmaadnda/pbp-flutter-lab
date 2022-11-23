@@ -71,3 +71,43 @@ Navigator.pop(): menghapus halaman paling atas dari stack dan menampilkan halama
 3. Membuat form sesuai ketentuan soal
 4. Menambahkan list untuk menyimpan data yang ditambahkan
 5. Menampilkan data yang sudah disimpan di halaman data.
+
+## Tugas 9
+### Pengambilan data JSON tanpa membuat model
+Pengambilan data JSON tentu bisa dilakukan tanpa perlu membuat model terlebih dahulu. Namun, pengolahan datanya harus dilakukan secara manual sehingga akan menjadi lebih sulit dan kesalahan implementasinya akan lebih sulit dicari. Oleh karena itu, cara ini tidak lebih baik daripada membuat model sebelum melakukan pengambilan data.
+
+### Widget yang dipakai di proyek kali ini dan fungsinya
+- AppBar: Biasanya untuk menampilkan toolbar dari widgets yang dimiliki aplikasi.
+- Text: Menampilkan teks, sebagai informasi atau semacamnya.
+- FloatingActionButton: Button yang biasanya berfungsi untuk interkasi user.
+- Row, Column: Flex widget untuk membuat _layout_ fleksibel secara horizontal (Row) atau vertikal (Column).
+- Container: Membuat elemen persegi.
+- ListView: Menampilkan banyak elemen dalam bentuk _scrollable list_.
+- ListTile: Memudahkan penggunaan ListView.
+- Drawer: Memberikan akses atau _link_ ke halaman dan fungsionalitas yang terdapat di aplikasi
+- TextButton: Button yang akan menangkap _onPressed_ dan _onLongPress event_.
+- BottomNavigationBar: Menempatkan sebaris _views_ atau _widgets_ di bagian bawah.
+
+### Mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter
+1. Membuat model kustom yang sesuai.
+2. _Fetch_ data dalam bentuk JSON menggunakan `http.get`.
+3. Mengubah data JSON menjadi objek sesuai model.
+4. Data sudah bisa ditampilkan.
+
+### Implementasi checklist
+1. Melakukan refactor file
+- Membuat dua folder baru di dalam folder `lib`, yaitu `model` dan `page`.
+- Memindahkan berkas selain main.dart ke dalam ke folder `page`.
+2. Membuat berkas dart baru yang berisi model _mywatchlist_.
+- Mendapatkan data _mywatchlist_ JSON dari web heroku tugas 3 dan salin ke [Quicktype](app.quicktype.io).
+- _Copy code_ ke berkas model baru yang disimpan di lib/model.
+3. Menambahkan dependensi HTTP
+- Melakukan `flutter pub add http` pada terminal proyek Flutter.
+- Memperbolehkan akses Internet pada aplikasi `counter_7` dengan menambahkan kode `<uses-permission android:name="android.permission.INTERNET" />` pada berkas `android/app/src/main/AndroidManifest.xml`.
+4. Menampilkan semua data JSON di berkas page baru, `mmywatchlist_page.dart`.
+- _Fetch_ data dan menampilkan judul dalam bentuk list.
+- Membuat navigasi dari setiap judul watch list ke halaman detail.
+5. Membuat berkas page baru, `detail_page.dart` untuk menampilkan detail dari setiap judul.
+- Menampilkan seluruh _fields_ sesuai judul yang dipilih.
+- Menambahkan tombol untuk kembali ke daftar _mywatchlist_.
+6. Menambahkan tombol navigasi pada drawer/hamburger untuk ke halaman _mywatchlist_ pada semua berkas page dan `main.dart`.

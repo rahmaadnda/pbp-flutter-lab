@@ -1,11 +1,11 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:counter_7/model/mywatchlist.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:counter_7/main.dart';
+import 'package:counter_7/model/mywatchlist.dart';
 import 'package:counter_7/page/dataBudget.dart';
-import 'package:counter_7/page/tambahBudget.dart';
 import 'package:counter_7/page/detail_page.dart';
+import 'package:counter_7/page/tambahBudget.dart';
 
 class MyWatchListPage extends StatefulWidget {
   const MyWatchListPage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class MyWatchListPage extends StatefulWidget {
 }
 
 class _MyWatchListPageState extends State<MyWatchListPage> {
-
+  // fetch json data
   Future<List<MyWatchList>> fetchWatchList() async {
     // how
     var url = Uri.parse('https://pbp-assignment.herokuapp.com/mywatchlist/json/');
@@ -42,12 +42,6 @@ class _MyWatchListPageState extends State<MyWatchListPage> {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
         appBar: AppBar(
           title: const Text('My Watch List'),

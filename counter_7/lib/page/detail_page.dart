@@ -1,10 +1,10 @@
-import 'package:counter_7/model/mywatchlist.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
 import 'package:counter_7/page/dataBudget.dart';
 import 'package:counter_7/page/tambahBudget.dart';
+import 'package:counter_7/model/mywatchlist.dart';
 import 'package:counter_7/page/mywatchlist_page.dart';
-import 'package:intl/intl.dart';
 
 class DetailPage extends StatelessWidget {
   final MyWatchList mywatchlist;
@@ -12,13 +12,6 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-
     return Scaffold(
         appBar: AppBar(
           title: const Text('Detail'),

@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final myWatchList = myWatchListFromJson(jsonString);
-
 import 'dart:convert';
 import 'dart:core';
 

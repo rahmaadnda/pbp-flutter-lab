@@ -1,5 +1,6 @@
 import 'package:counter_7/main.dart';
-import 'package:counter_7/dataBudget.dart';
+import 'package:counter_7/page/mywatchlist_page.dart';
+import 'package:counter_7/page/dataBudget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -65,6 +66,16 @@ class _AddPageState extends State<AddPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const DataPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                // Route menu ke halaman utama
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyWatchListPage()),
                 );
               },
             ),
